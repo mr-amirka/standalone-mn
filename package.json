@@ -1,0 +1,25 @@
+{
+  "name": "standalone-mn",
+  "version": "0.0.1",
+  "description": "standalone MN",
+  "keywords": [
+    "standalone",
+    "minimalist-notation",
+    "mn"
+  ],
+  "author": {
+    "name": "Absolutely Amir",
+    "email": "mr.amirka@ya.ru",
+    "url": "https://github.com/mr-amirka"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mr-amirka/standalone-mn.git"
+  },
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "mn-services": "*",
+    "mn-presets": "*"
+  }
+}
