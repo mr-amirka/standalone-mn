@@ -2,6 +2,10 @@
   "name": "standalone-mn",
   "version": "0.0.1",
   "description": "standalone MN",
+  "scripts": {
+    "start": "webpack-dev-server --inline --config webpack.config.js --progress",
+    "build": "webpack --mode production"
+  },
   "keywords": [
     "standalone",
     "minimalist-notation",
