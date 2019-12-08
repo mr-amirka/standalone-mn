@@ -1,11 +1,6 @@
-
 const Path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-
-
 
 module.exports = {
   watch: true,
@@ -14,14 +9,13 @@ module.exports = {
     poll: 1000
   },
   devServer: {
-    contentBase: Path.join(__dirname, 'dist'),
+    contentBase: Path.join(__dirname, 'dest'),
     compress: true,
     open: true,
     openPage: 'index.html',
-    port: 9001,
+    port: 9002,
   },
   mode:
-    //'production',
     'development',
   resolve: {
     extensions: [ '.ts', '.js', '.jsx' ]
@@ -31,7 +25,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: __dirname + '/dist',
+    path: __dirname + '/dest',
     publicPath: '/'
   },
   module: {
@@ -110,19 +104,6 @@ module.exports = {
           }
         ]
       },
-      /*
-      {
-        test: /\.(jpg|jpeg|png|svg|gif|woff|woff2|otf|ttf|eot|mp3)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 100000
-            }
-          }
-        ]
-      },
-      */
       {
         test: /\.html?$/,
         use: [
@@ -139,33 +120,11 @@ module.exports = {
     ]
   },
   plugins: [
-    //new HardSourceWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: 'head',
       template: './index.html',
       filename: 'index.html',
-      chunks: [ ]
-    })
-
+      chunks: [ 'standalone-mn' ],
+    }),
   ],
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        extractComments: false,
-        sourceMap: false,
-        uglifyOptions: {
-          warnings: false,
-          ie8: false,
-          safari10: false,
-          compress: {
-            unsafe_math: true
-          },
-          output: {
-            comments: false,
-            beautify: false
-          }
-        }
-      })
-    ]
-  }
 };
