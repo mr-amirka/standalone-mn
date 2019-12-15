@@ -1,6 +1,6 @@
 {
   "name": "standalone-mn",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "standalone MN",
   "scripts": {
     "start": "webpack-dev-server --inline --config webpack.config.js --progress  --watch",
@@ -23,8 +23,8 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "minimalist-notation": "1.4.49",
-    "mn-utils": "0.0.33",
-    "mn-presets": "0.0.20"
+    "minimalist-notation": "1.4.50",
+    "mn-utils": "0.0.34",
+    "mn-presets": "0.0.21"
   }
 }
