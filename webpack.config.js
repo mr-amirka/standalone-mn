@@ -3,13 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000
   },
   devServer: {
-    contentBase: Path.join(__dirname, 'dest'),
+    contentBase: Path.join(__dirname, 'dist'),
     compress: true,
     open: true,
     openPage: 'index.html',
@@ -25,7 +24,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: __dirname + '/dest',
+    path: __dirname + '/dist',
     publicPath: '/'
   },
   module: {
