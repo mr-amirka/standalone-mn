@@ -1,11 +1,10 @@
 const Path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   watchOptions: {
     aggregateTimeout: 300,
-    poll: 1000
+    poll: 1000,
   },
   devServer: {
     contentBase: Path.join(__dirname, 'dist'),
@@ -17,15 +16,15 @@ module.exports = {
   mode:
     'development',
   resolve: {
-    extensions: [ '.ts', '.js', '.jsx' ]
+    extensions: ['.ts', '.js', '.jsx'],
   },
   entry: {
-    'standalone-mn': './index.js'
+    'standalone-mn': './index.js',
   },
   output: {
     filename: '[name].js',
     path: __dirname + '/dist',
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -33,63 +32,63 @@ module.exports = {
         test: /\.ts$/,
         use: [
           {
-            loader: "awesome-typescript-loader",
+            loader: 'awesome-typescript-loader',
             options: {
               cacheDirectory: true,
               configFileName: 'tsconfig.json',
               useBabel: true,
               babelOptions: {
                 babelrc: false,
-                presets: [ "@babel/preset-env" ]
+                presets: ['@babel/preset-env'],
               },
-              babelCore: "@babel/core",
-            }
-          }
+              babelCore: '@babel/core',
+            },
+          },
         ],
-        exclude: [ /\.spec\.ts$/, /\.tmp\.ts$/  ]
+        exclude: [/\.spec\.ts$/, /\.tmp\.ts$/],
       },
       {
         test: /\.jsx?$/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            presets: [ "@babel/preset-env", "@babel/preset-react" ],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: [
-              "@babel/syntax-dynamic-import",
-              "@babel/plugin-proposal-class-properties",
-              [ "@babel/plugin-proposal-decorators", { legacy: true } ]
-           ]
-          }
-        }
+              '@babel/syntax-dynamic-import',
+              '@babel/plugin-proposal-class-properties',
+              ['@babel/plugin-proposal-decorators', {legacy: true}],
+            ],
+          },
+        },
       },
       {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           }, {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              minimize: true
-            }
-          }
-        ]
+              minimize: true,
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           }, {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              minimize: true
-            }
+              minimize: true,
+            },
           }, {
-            loader: "sass-loader"
-          }
-        ]
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.(jpg|jpeg|png|svg|gif|woff|woff2|otf|ttf|eot|mp3)$/,
@@ -98,10 +97,10 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[hash].[ext]',
-              outputPath: 'assets/static/'
-            }
-          }
-        ]
+              outputPath: 'assets/static/',
+            },
+          },
+        ],
       },
       {
         test: /\.html?$/,
@@ -111,19 +110,19 @@ module.exports = {
             options: {
               minimize: true,
               removeComments: false,
-              collapseWhitespace: false
-            }
-          }
+              collapseWhitespace: false,
+            },
+          },
         ],
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'head',
       template: './index.html',
       filename: 'index.html',
-      chunks: [ 'standalone-mn' ],
+      chunks: ['standalone-mn'],
     }),
   ],
 };

@@ -12,7 +12,7 @@
     "mn"
   ],
   "author": {
-    "name": "Amir Absolutely",
+    "name": "Amir Absalyamov",
     "email": "mr.amirka@ya.ru",
     "url": "https://github.com/mr-amirka"
   },
@@ -23,8 +23,8 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "minimalist-notation": "1.4.50",
-    "mn-utils": "0.0.34",
-    "mn-presets": "0.0.21"
+    "minimalist-notation": "1.5.11",
+    "mn-utils": "0.0.84",
+    "mn-presets": "0.0.36"
   }
 }
