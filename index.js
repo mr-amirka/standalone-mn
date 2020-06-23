@@ -10,11 +10,11 @@ mn.emitter.on(
 );
 require('mn-utils/browser/ready')(() => {
   const presets = [
-    require('mn-presets/medias'),
-    require('mn-presets/runtimePrefixes'),
-    require('mn-presets/styles'),
-    require('mn-presets/states'),
-    require('mn-presets/main'),
+    require('minimalist-notation/presets/medias'),
+    require('minimalist-notation/presets/runtimePrefixes'),
+    require('minimalist-notation/presets/styles'),
+    require('minimalist-notation/presets/states'),
+    require('minimalist-notation/presets/main'),
   ];
   presets.push(...(g.mnPresets || []));
   mn.setPresets(presets);
