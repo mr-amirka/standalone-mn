@@ -15,24 +15,36 @@
       (window.mnPresets || (window.mnPresets = [])).push(function(mn) {
         mn({
           fCustom: 'f50',
-          fCustomBig: 'f100'
+          fCustomBig: 'f100',
         });
+        mn.media.desktop = {
+          selector: '.desktop',
+        };
+        mn.media.win = {
+          selector: '.win',
+        };
       })
     </script>
   </head>
-  <body m-n="bgE>.*inner rlv bg0F0\.5-0\.9">
+  <body m-n="bgE>.*inner rlv bg0F0.5-0.9">
     <div m-n="h100vh txt1 ffRoboto,sans-serif inner">
       <div m-n="tbl sq sq500@m">
         <div>
-          <div m-n="sq200 bg0 mhA ph5-i h1@m:h w400@0-1000^3 w100@0-1000^2 spnr"></div>
-          <a m-n="fCustom@0-1000^1 fCustomBig@0-1000">link</a>
+          <div m-n="sq200 bg0 bgF00@d^3 bg0F0@d^2 mhA ph5-i h50@m:h w400@0-1000^3 w100@0-1000^2 spnr"></div>
+          <div m-n="tc mt80">
+            <a m-n="fCustom@0-1000^1 fCustomBig@0-1000">link</a>
+          </div>
         </div>
       </div>
     </div>
     <div m-n="layoutRow fhaC fvaC w h200">
-      <div m-n="sq40 bg0">
+      <div m-n="sq40 bg0 bF.15">
 
       </div>
     </div>
+    <div m-n="sq40 bgF00@d&m2-&x200-400,m2,m3-&desktop&win^2">
+
+    </div>
+    <div id="app"></div>
   </body>
 </html>
